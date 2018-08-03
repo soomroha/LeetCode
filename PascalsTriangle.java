@@ -9,7 +9,7 @@ class PascalsTriangle {
     		
         if(numRows == 0) {
     		return triangle;
-    	}
+        }
         
         ArrayList<Integer> firstRow = new ArrayList<Integer>();
         firstRow.add(1);
