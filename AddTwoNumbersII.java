@@ -8,25 +8,6 @@ public class AddTwoNumbersII {
 	      ListNode(int x) { val = x; }
 	  }
 	 
-	  
-	  public static void main(String [] args) {
-		  ListNode head = new ListNode(1);
-		  head.next = new ListNode(5);
-		  head.next.next = new ListNode(4);
-		  head.next.next.next = new ListNode(7);
-		  head.next.next.next.next = new ListNode(8);
-		  ListNode head2 = new ListNode(3);
-		  head2.next = new ListNode(6);
-		  head2.next.next = new ListNode(2);
-		  head2.next.next.next = new ListNode(9);
-		  ListNode reversed1 = reverse(head);
-		  ListNode reversed2 = reverse(head2);
-		  printList(reversed1);
-		  printList(reversed2);
-		  printList(addTwoNumbers(reversed1, reversed2));
-		  
-	  }
-	 
 	 
 	  public static void printList(ListNode head) {
 		  ListNode temp = head;
@@ -36,8 +17,6 @@ public class AddTwoNumbersII {
 		  }
 		  System.out.println();
 	  }
-	  
-	 
 	 
 	 public static ListNode reverse(ListNode head) {
 		 if (head == null) {
@@ -70,13 +49,12 @@ public class AddTwoNumbersII {
 	 
 	 public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 	        
-		 ListNode temp1 = l1;
-		 ListNode temp2 = l2;
+		 ListNode temp1 = reverse(l1);
+		 ListNode temp2 = reverse(l2);
 		 
 		 ListNode newList = null;
 		 
 		 int carry = 0;
-		 String result = "";
 		 int digit = 0;
 		 int sum = 0;
 		 
@@ -94,7 +72,7 @@ public class AddTwoNumbersII {
 			 
 			 if(sum >= 10) {
 				 digit = sum % 10;
-				 carry = (sum / 10) % 10;
+				 carry = 1;
 			 }
 			 else {
 				 digit = sum;
@@ -111,8 +89,11 @@ public class AddTwoNumbersII {
 			 }
 		 }
 		 
+		 if(carry > 0) {
+			 newList = addNode(newList, carry);
+		 }
+		 
 		 return reverse(newList);
 	 }
 	 
-
 }
