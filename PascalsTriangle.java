@@ -7,7 +7,7 @@ class PascalsTriangle {
         
         List<List<Integer>> triangle = new ArrayList<List<Integer>>();
     		
-    	if(numRows == 0) {
+        if(numRows == 0) {
     		return triangle;
     	}
         
