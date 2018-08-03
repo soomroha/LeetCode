@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class PascalsTriangle {
+    
     public List<List<Integer>> generate(int numRows) {
         
         List<List<Integer>> triangle = new ArrayList<List<Integer>>();
@@ -13,6 +14,7 @@ class PascalsTriangle {
         ArrayList<Integer> firstRow = new ArrayList<Integer>();
         firstRow.add(1);
         triangle.add(firstRow);
+        
         if(numRows == 1) {
     		return triangle;
         }        
